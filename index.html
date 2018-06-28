@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Pixel Art Maker!</title>
+    <head> <!-- creating the head element -->
+    <title>Pixel Art Maker!</title> <!--title name of the web page-->
+   <!-- linking our css file to the html -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="styles.css">
+    <!-- linking our java script jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="jscolor.min.js"></script>
-</head>
-<body>
+</head> <!-- closing our head element-->
+<body>  <!-- creating body page-->
+    <!-- the first heading -->
     <h1>Lab:<span class="special1"> Pixel</span><span class="special2"> Art </span><span class="special3"> Maker</span></h1>
+    <img src=""> <!--insert Udacity logo-->
 
     <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
+    <form id="sizePicker"> <!--creating a form for user input-->
+        <!-- create grid size user input-->
         Grid Height:
         <input type="number" id="inputHeight" name="height" min="1" value="1">
         Grid Width:
         <input type="number" id="inputWeight" name="width" min="1" value="1">
         <input type="submit">
     </form>
-
+<!-- create color picker for user to select desired color  -->
     <h2>Pick A Color</h2>
     <input type="color" id="colorPicker">
-
+<!-- create table for Grid  -->
     <h2>Design Canvas</h2>
     <table  id="pixelCanvas"></table>
+    <!-- link java script file -->
     <script src="designs.js"></script>
    
 </body>

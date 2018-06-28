@@ -1,12 +1,15 @@
+/* styling the body */
 body {
     text-align: center;
 }
 
+/* styling the first header */
 h1 {
     font-family: Monoton;
     font-size: 70px;
     margin: 0.2em;
 }
+/* adding different color to h1 text */
 .special1 {
 color: aquamarine;
 }
@@ -17,6 +20,7 @@ color: aquamarine;
     color: gold;
 }
 
+/* styling h2 element */
 h2 {
     margin: 1em 0 0.25em;
 }
@@ -25,15 +29,14 @@ h2:first-of-type {
     margin-top: 0.5em;
 }
 
+/* styling our table both row and column  */
 table,
  tr,
  td {
     border: 1px solid black;
 }
-td:nth-of-child(even){
-    border: 1px dashed black;
-    background: red;
-}
+
+/* creating a solid border line on all even row and cell */
 #pixelCanvas tr:nth-child(even){border-bottom: 2px solid black;
 }
 #pixelCanvas tr td:nth-child(even){border-right: 2px solid black;
@@ -42,16 +45,31 @@ table {
     border-collapse: collapse;
     margin: 0 auto;
 }
-
+/* styling the row size */
 tr {
     height: 20px;
 }
-
+/* styling the cell colum size */
 td {
     width: 20px;
 }
 
+/* styling our input for user to select size */
 input[type=number] {
     width: 6em;
     border-radius: 25%;
+}
+
+/* styling user submit button */
+input[type=submit] {
+    border: 2px solid ghostwhite;
+    border-radius: 15%;
+    margin: 5px; 
+}
+
+/* styling the reset button */
+button {
+    border: 2px solid ghostwhite;
+    border-radius: 15%;
+    margin: 5px; 
 }

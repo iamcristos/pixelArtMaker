@@ -1,66 +1,59 @@
-// Select color input
-// Select size input
- //select color and sie inputs
-
-// When size is submitted by the user, call makeGrid()
-
+ // create makeGrid function 
 function makeGrid() {
-
     console.log("makeGrid is working")
+    // define variables 
     var designCanvas, color, height, width, row, column;
     
-    designCanvas= $("#pixelCanvas").html("");
-    designCanvas.children().remove(); 
-     color= $("#colorPicker").val();
-    height= $("#inputHeight").val();
+    designCanvas= $("#pixelCanvas").html(""); // select the table input
+    designCanvas.children().remove(); // clear all child element on the table input
+     color= $("#colorPicker").val(); // select color input 
+    // select size input to make the row and cell column
+     height= $("#inputHeight").val(); 
       width= $("#inputWeight").val() 
     
-    // creating grid row
+    // a for loop creating one row and many column
       for (i=0; i<height; i++) {
-        designCanvas.append("<tr></tr>");
+        designCanvas.append("<tr></tr>"); // creating grid row 
     }
-     row= $("tr")
-    //  creating gridColumn
+     row= $("tr") // select row
+  
 for (j=0; j<width; j++) {
-     row.append("<td></td>");  
+     row.append("<td></td>");  //  creating gridCell
 }
- column= $("td")
-// Your code goes here!
-// creating color on the grid
-column.on("click", function(){
-  var color= $("#colorPicker").val()
-    $(this).attr("bgcolor", color);
-})
-column.on("dblclick", function(){
-  var color= $("#colorPicker").val()
-    $(this).attr("bgcolor", "white");
-})
+ column= $("td") // select cell
 
+// inputing color on  gridCell by clicking on the cell
+column.on("click", function(){
+  var color= $("#colorPicker").val() // select the color input
+    $(this).attr("bgcolor", color);  // adding background color to the cell
+})
+// erasing color already on gridCell when cell is double clicked
+column.on("dblclick", function(){
+  var color= $("#colorPicker").val() // select the color input
+    $(this).attr("bgcolor", "white");  // erasing background color on the cell
+})
 }
+
+// passing makeGrid function when submit is clicked
 var submit= $('input[type="submit"]')
 
 submit.click(function(event) {
   event.preventDefault()
     makeGrid();
-    color = ''
 })
 
 
-var reset= "<button>RESET</button>";
+// creating a reset button that clears the Grid when clicked
+var reset= "<button>Reset</button>";
 
-submit.after(reset);
+submit.after(reset); //adding reset button after the submit input
 
 $("reset").attr("margin", "5px")
 
+// passing a function that clears the grid when reset is clicked
 reset.click(function(){
   designCanvas.empty()
 })
 
-var undo= "<button>UNDO</button>";
-reset.insertA9fter(undo);
-undo.click(function(){
-  var column= $("td").val();
-  var color=  $("#colorPicker").val();
-  column.attr("bgcolor", color).removeClass("bgcolor");
-})
+
 
