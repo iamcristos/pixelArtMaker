@@ -27,12 +27,19 @@ column.on("click", function(){
   var color= $("#colorPicker").val() // select the color input
     $(this).attr("bgcolor", color);  // adding background color to the cell
 })
-// erasing color already on gridCell when cell is double clicked
-column.on("dblclick", function(){
-  var color= $("#colorPicker").val() // select the color input
-    $(this).attr("bgcolor", "white");  // erasing background color on the cell
-})
-}
+    column.on("dblclick", function(){
+      var color= $("#colorPicker").val() // select the color input
+        $(this).attr("bgcolor", "white");  // erasing background color to the cell
+    })
+    var eraseColor= $('input[type="button"]')
+
+    eraseColor.click(function(){
+      $("column").click(function() {
+        $("column").attr("bgcolor", "white")
+      })
+    })
+  }
+
 
 // passing makeGrid function when submit is clicked
 var submit= $('input[type="submit"]')
@@ -48,12 +55,7 @@ var reset= "<button>Reset</button>";
 
 submit.after(reset); //adding reset button after the submit input
 
-$("reset").attr("margin", "5px")
-
 // passing a function that clears the grid when reset is clicked
-reset.click(function(){
+reset.click(function(){ 
   designCanvas.empty()
 })
-
-
-

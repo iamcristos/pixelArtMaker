@@ -8,6 +8,16 @@ h1 {
     font-family: Monoton;
     font-size: 70px;
     margin: 0.2em;
+    margin-right: 1px;
+    margin-left: 1px;
+    border: 2px solid gainsboro;
+    border-radius: 15px;
+    background-color: azure
+}
+/* to hover when the mouse touches the h1 text */
+h1:hover {
+    text-transform: lowercase;
+    border: none;
 }
 /* adding different color to h1 text */
 .special1 {
@@ -24,7 +34,7 @@ color: aquamarine;
 h2 {
     margin: 1em 0 0.25em;
 }
-
+/* adding margin to our fist h2 */
 h2:first-of-type {
     margin-top: 0.5em;
 }
@@ -72,4 +82,16 @@ button {
     border: 2px solid ghostwhite;
     border-radius: 15%;
     margin: 5px; 
+}
+button:hover {
+    background-color: gray
+}
+input[type=button] {
+    border: 2px solid ghostwhite;
+    border-radius: 15%;
+    margin: 5px;
+    padding: 5px;
+}  
+input:hover {
+    background-color: gray;
 }
