@@ -1,8 +1,11 @@
+ var color= $("#colorPicker").val(); // select color input 
+ var size= $("sizePicker")  // select size input 
+ 
  // create makeGrid function 
 function makeGrid() {
     console.log("makeGrid is working")
     // define variables 
-    var designCanvas, color, height, width, row, column;
+    var designCanvas, color, height, width, row, column; // naming variables
     
     designCanvas= $("#pixelCanvas").html(""); // select the table input
     designCanvas.children().remove(); // clear all child element on the table input
@@ -27,11 +30,12 @@ column.on("click", function(){
   var color= $("#colorPicker").val() // select the color input
     $(this).attr("bgcolor", color);  // adding background color to the cell
 })
-    column.on("dblclick", function(){
+    // creating a function that erases color on a certain cell by double clicking 
+column.on("dblclick", function(){
       var color= $("#colorPicker").val() // select the color input
         $(this).attr("bgcolor", "white");  // erasing background color to the cell
     })
-    var eraseColor= $('input[type="button"]')
+    var eraseColor= $('input[type="button"]') // select earase color input
 
     eraseColor.click(function(){
       $("column").click(function() {
@@ -40,16 +44,13 @@ column.on("click", function(){
     })
   }
 
-
 // passing makeGrid function when submit is clicked
 var submit= $('input[type="submit"]')
 
 submit.click(function(event) {
-  event.preventDefault()
+  event.preventDefault(); // prevent default from loading
     makeGrid();
 })
-
-
 // creating a reset button that clears the Grid when clicked
 var reset= "<button>Reset</button>";
 
